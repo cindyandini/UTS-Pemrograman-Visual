@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div id="app">
+		<h1 class="window-title">Temperature Suhu</h1>
+
+		<form id="form" class="container">
+			<div class="from-container">
+				<div class="form-control">
+            <div>
+            Temperature:
+            <input type="text" id="tempinput" />
+            <select size="3" id="initialtemp">
+                <option value="c" selected>C</option>
+                <option value="f">F</option>
+                <option value="k">K</option>
+                <option value="r">R</option>
+            </select>
+            <br/>
+            <br/>Result:
+            <br/>
+            <input type="text" id="result"/>
+            <br/><br/>
+            <button type="button" onclick="convert()">Convert</button>
+            </div>
+	<script src="suhu1.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event) {
+			fromSelector.onchange = function(e) {
+				refreshOption();
+				hideOption(fromSelector.value.toLowerCase());
+				console.log('gue jalaaan:' + fromSelector.value.toLowerCase());
+			}
+
+			mainForm.onsubmit = function(e) {
+				e.preventDefault();
+				convert();
+			}
+		});	
+	</script>
+</body>
+</html>
